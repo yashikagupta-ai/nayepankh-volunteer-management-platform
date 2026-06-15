@@ -24,7 +24,7 @@ app.use(
       const isAllowed = 
         origin.startsWith('http://localhost:') || 
         origin.startsWith('http://127.0.0.1:') ||
-        origin.startsWith('https://yashikagupta-ai.github.io');
+        origin.startsWith('https://yashikagupta-ai.github.io')||
         origin.startsWith('https://nayepankh-volunteer-management-plat-one.vercel.app');
 
       if (isAllowed) {
