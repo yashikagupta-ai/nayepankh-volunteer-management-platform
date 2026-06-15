@@ -14,22 +14,17 @@ const app = express();
 connectDB();
 
 // ─── Middleware ───────────────────────────────────────────────────────────────
-// Allow multiple origins (localhost and production frontend)
-const allowedOrigins = [
-  'http://localhost:5173',
-  'http://localhost:3000',
-  'https://yashikagupta-ai.github.io'
-];
-
+// Allow multiple origins (any localhost port and production frontend)
 app.use(
   cors({
     origin: (origin, callback) => {
       // allow requests with no origin (like mobile apps or curl requests)
       if (!origin) return callback(null, true);
       
-      const isAllowed = allowedOrigins.some(allowedOrigin => {
-        return origin === allowedOrigin || origin.startsWith(allowedOrigin);
-      });
+      const isAllowed = 
+        origin.startsWith('http://localhost:') || 
+        origin.startsWith('http://127.0.0.1:') ||
+        origin.startsWith('https://yashikagupta-ai.github.io');
 
       if (isAllowed) {
         callback(null, true);
