@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #E4DDD3;
+    color: #111827;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111827;
+  }
+}
+
+@layer components {
+  /* ── Glassmorphism card ── */
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 161, 155, 0.15) !apply border border-white/5;
+    border-radius: 1rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03) !important;
+  }
+
+  /* ── Primary button ── */
+  .btn-primary {
+    background: #00A19B !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 14px rgba(0, 161, 155, 0.25) !important;
+  }
+
+  .btn-primary:hover {
+    background: #008b85 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 161, 155, 0.35) !important;
+  }
+
+  .btn-secondary {
+    border: 2px solid #00A19B !important;
+    color: #00A19B !important;
+    background: transparent !important;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-secondary:hover {
+    background: #00A19B !important;
+    color: #ffffff !important;
+  }
+
+  /* ── Section heading ── */
+  .section-heading {
+    color: #111827 !important;
+  }
+
+  .section-subheading {
+    color: #4B5563 !important;
+  }
+
+  /* ── Input field ── */
+  .form-input {
+    display: block !important;
+    width: 100% !important;
+    background-color: #ffffff !important;
+    border: 1px solid #CFC8BE !important;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: #111827 !important;
+    transition: all 0.3s ease;
+  }
+
+  .form-input:focus {
+    border-color: #00A19B !important;
+    box-shadow: 0 0 0 3px rgba(0, 161, 155, 0.15) !important;
+  }
+
+  .form-label {
+    color: #374151 !important;
+  }
+
+  /* ── Badge pill ── */
+  .badge {
+    background-color: rgba(0, 161, 155, 0.08) !important;
+    color: #007a75 !important;
+    border: 1px solid rgba(0, 161, 155, 0.15) !important;
+    font-weight: 600;
+  }
+
+  /* ── Stats number ── */
+  .stat-number {
+    color: #00A19B !important;
+  }
+
+  /* ── Scrollbar styling ── */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #E4DDD3 !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #00A19B !important;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #008b85 !important;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #00A19B, #007a75) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 30px rgba(0, 161, 155, 0.15) !important;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+}
+
+/* ── Global Light Mode Contrast Overrides ── */
+.text-white {
+  color: #111827 !important;
+}
+.text-gray-100 {
+  color: #1F2937 !important;
+}
+.text-gray-200 {
+  color: #2D3748 !important;
+}
+.text-gray-300 {
+  color: #4A5568 !important;
+}
+.text-gray-400 {
+  color: #5A6A7A !important;
+}
+.text-gray-500 {
+  color: #718096 !important;
+}
+
+/* Exceptions: Elements that should retain white text (e.g. primary buttons, chatbot headers) */
+.btn-primary,
+.btn-primary *,
+.bg-gradient-to-r.from-orange-500.to-rose-600 *,
+.bg-gradient-to-r.from-orange-500.to-rose-500 *,
+.bg-gradient-to-tr.from-orange-500.to-rose-500 *,
+.bg-orange-500,
+.bg-orange-500 *,
+.bg-rose-500,
+.bg-rose-500 *,
+.text-real-white {
+  color: #ffffff !important;
+}
+
+/* Override hardcoded dark backgrounds to be soft cream/latte compliant */
+.bg-\[\#090D16\],
+.bg-\[\#0E1422\],
+.bg-\[\#0B0F19\],
+.bg-dark-900 {
+  background-color: #E4DDD3 !important;
+}
+
+.bg-\[\#0F1524\],
+.bg-\[\#121A2A\],
+.bg-\[\#0A0E18\],
+.bg-dark-800 {
+  background-color: #DCD5CB !important;
+}
+
+/* Stepper state overrides */
+.bg-orange-500\/10 {
+  background-color: rgba(0, 161, 155, 0.1) !important;
+}
+.border-orange-500\/40 {
+  border-color: rgba(0, 161, 155, 0.4) !important;
+}
+.text-orange-400 {
+  color: #007a75 !important;
+}
+.bg-orange-500\/20 {
+  background-color: rgba(0, 161, 155, 0.2) !important;
+}
+
+/* Border opacity overrides for light backgrounds */
+.border-white\/5 {
+  border-color: rgba(17, 24, 39, 0.05) !important;
+}
+.border-white\/10 {
+  border-color: rgba(17, 24, 39, 0.1) !important;
+}
+.border-white\/15 {
+  border-color: rgba(17, 24, 39, 0.15) !important;
+}
+
+@keyframes bounce-delay {
+  0%, 80%, 100% {
+    transform: scale(0.3);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-bounce-delay-1 {
+  animation: bounce-delay 1.4s infinite ease-in-out both;
+  animation-delay: -0.32s;
+}
+
+.animate-bounce-delay-2 {
+  animation: bounce-delay 1.4s infinite ease-in-out both;
+  animation-delay: -0.16s;
+}
+
+.animate-bounce-delay-3 {
+  animation: bounce-delay 1.4s infinite ease-in-out both;
+}
+
+

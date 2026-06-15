@@ -1,0 +1,12 @@
+{
+  "name": "nayepankh-volunteer-platform",
+  "version": "1.0.0",
+  "description": "NayePankh Foundation Volunteer Management Platform",
+  "scripts": {
+    "start:server": "cd server && npm start",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "install:all": "cd server && npm install && cd ../client && npm install"
+  },
+  "private": true
+}
