@@ -1,6 +1,6 @@
 # 🌟 NayePankh Foundation — Volunteer Management Platform
 
-A full-stack Volunteer Management Platform built for **NayePankh Foundation**, a UP Government Registered NGO (80G & 12A).
+A full-stack Volunteer Management Platform built for **NayePankh Foundation**, a UP Government Registered NGO (80G & 12A). This project cover Frontend, Backend, Full Stack, AI-Agent developemnt 
 
 ---
 
